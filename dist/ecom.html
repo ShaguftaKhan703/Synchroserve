@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./ecom.js"></script>
+    <style>
+      /* Customizing Tailwind with the color palette */
+      :root {
+        --color-primary: #264653;
+        --color-secondary: #2a9d8f;
+        --color-accent: #e9c46a;
+        --color-highlight: #f4a261;
+        --color-danger: #e76f51;
+      }
+      /* Adding smooth transitions */
+      .transition {
+        transition: all 0.3s ease;
+      }
+      .hover-scale:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-[var(--color-primary)] text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">E-commerce</h1>
+        <ul class="flex space-x-6">
+          <li>
+            <a href="#home" class="transition hover:text-[var(--color-accent)]"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              onclick="alert('about')"
+              class="transition hover:text-[var(--color-accent)]"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="#products"
+              class="transition hover:text-[var(--color-accent)]"
+              >Products</a
+            >
+          </li>
+          <li>
+            <a
+              href="#reviews"
+              class="transition hover:text-[var(--color-accent)]"
+              >Reviews</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="transition hover:text-[var(--color-accent)]"
+              >Contact Us</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section
+      id="home"
+      class="h-screen bg-cover bg-center"
+      style="background-image: url('https://via.placeholder.com/1920x1080')"
+    >
+      <div
+        class="h-full flex items-center justify-center bg-black bg-opacity-50"
+      >
+        <h2 class="text-white text-5xl font-bold text-center">
+          Welcome to Our E-commerce Platform
+        </h2>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-gray-100 text-[var(--color-primary)]">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">About Us</h2>
+        <p class="max-w-3xl mx-auto text-lg">
+          Our e-commerce platform is dedicated to providing the best products at
+          affordable prices, with a seamless shopping experience for all our
+          customers.
+        </p>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white text-[var(--color-primary)]">
+      <div class="container mx-w-full text-center">
+        <h2 class="text-4xl font-bold mb-6">Products</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Sample Product -->
+          <div
+            class="p-4 bg-[var(--color-secondary)] text-white rounded-lg shadow-lg hover-scale transition"
+          >
+            <img
+              src="https://via.placeholder.com/200"
+              alt="Product"
+              class="w-full h-48 object-cover rounded-md"
+            />
+            <h3 class="text-xl font-semibold mt-4">Product Name</h3>
+            <p class="text-sm mt-2">
+              This is a description of the product, highlighting its key
+              features.
+            </p>
+            <div class="flex space-x-2 mt-4">
+              <button
+                class="bg-[var(--color-highlight)] px-4 py-2 rounded-lg hover:bg-[var(--color-danger)] transition"
+              >
+                Add to Cart
+              </button>
+              <button
+                class="bg-[var(--color-accent)] px-4 py-2 rounded-lg hover:bg-[var(--color-danger)] transition"
+              >
+                Buy Now
+              </button>
+            </div>
+          </div>
+      
+          <!-- Repeat the product card for more products -->
+      
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 bg-gray-100 text-[var(--color-primary)]">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Customer Reviews</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Sample Review -->
+          <div class="p-6 bg-white rounded-lg shadow-lg hover-scale transition">
+            <img
+              src="https://via.placeholder.com/100"
+              alt="User"
+              class="w-16 h-16 rounded-full mx-auto"
+            />
+            <p class="mt-4">
+              "Great product! I'm extremely satisfied with the quality and the
+              customer service."
+            </p>
+            <h4 class="mt-2 font-semibold">- John Doe</h4>
+          </div>
+          <!-- Repeat for more reviews -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="py-16 bg-[var(--color-primary)] text-white">
+      <div class="container mx-auto text-center">
+        <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
+        <form class="max-w-lg mx-auto space-y-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            class="w-full p-4 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition"
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            class="w-full p-4 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition"
+          />
+          <textarea
+            placeholder="Your Message"
+            class="w-full p-4 rounded-lg bg-white text-black focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] transition"
+          ></textarea>
+          <button
+            class="bg-[var(--color-accent)] px-6 py-3 rounded-lg hover:bg-[var(--color-danger)] transition"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[var(--color-primary)] text-white p-4 text-center">
+      <p>&copy; 2024 E-commerce Platform. All rights reserved.</p>
+    </footer>
+    <script>
+      // arrays
+      const my_arr = [2, 4, 6, 8, 10, 12];
+      const cities = [
+        "hyderabad",
+        "delhi",
+        "mumbai",
+        "chennai",
+        "calcutta",
+        "banglore",
+      ];
+      cities[6] = "surat";
+      console.log(cities);
+      console.log(my_arr);
+      console.log(my_arr[0]);
+      //objects
+      const student = { name: "poojitha", age: 18, batch: "morning" };
+      console.log(student);
+      console.log(typeof student);
+      //   arthimetic operators
+      let x = 36;
+      let y = 10;
+      console.log(x + y);
+      console.log(x - y);
+      console.log(x * y);
+      console.log(x / y);
+      console.log(x % y);
+      //assignment operators
+      console.log((x += y)); //x=x+y x=46
+
+      console.log((x -= y)); //x=46-10 x=36
+      console.log((x *= y)); //x=36*10 x=360
+      console.log((x /= y));
+      console.log((x %= y));
+      //logical operators
+      let stat1 = true,
+        stat2 = false;
+      console.log(stat1 && stat2);
+      console.log(stat1 || stat2);
+      console.log(!stat1);
+      let str1 = "hey!";
+      let str2 = "people";
+      // str1 += str2;
+      console.log(str1 + "\n" + str2);
+      console.log("\n");
+      console.log(str1);
+      // inc and dec operators
+      let a = 10;
+      let b = 12;
+      console.log(a++);
+    </script>
+  </body>
+</html>

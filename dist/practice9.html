@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputValue"></input>
+    <button id="searchButton">Search</button>
+    <p id="result"></pid>
+</body>
+<script>
+    let inputValue=document.getElementById("inputValue");
+    let button=document.getElementById("searchButton");
+    let result=document.getElementById("result")
+    button.addEventListener("click", () => {
+  const query = inputValue.value.trim();
+  const apiKey = "e51e9e50";
+  const apiUrl = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then(displayMovies)
+    .catch((err) => alert(err.message));
+});
+  const displayMovies = (data) => {
+        movieGrid.innerHTML = "";
+  }
+</script>
+</html>

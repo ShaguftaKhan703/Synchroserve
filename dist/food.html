@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Search App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <div class="container mx-auto p-5">
+      <header class="text-center mb-5">
+        <h1 class="text-4xl font-bold mb-3">Recipe Search App</h1>
+        <div class="flex justify-center gap-3">
+          <input
+            type="text"
+            id="inputValue"
+            class="p-2 w-72 text-gray-900 text-lg rounded-md"
+            placeholder="Search for a recipe..."
+          />
+          <button
+            id="searchButton"
+            class="p-2 px-5 text-lg bg-green-600 text-white rounded-md hover:bg-green-700 transition duration-300"
+          >
+            Search
+          </button>
+        </div>
+      </header>
+      <main
+        id="recipeGrid"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+      >
+        <!-- Recipe cards will appear here -->
+      </main>
+    </div>
+    <script>
+      const button = document.getElementById("searchButton");
+      const inputValue = document.getElementById("inputValue");
+      const recipeGrid = document.getElementById("recipeGrid");
+
+      button.addEventListener("click", () => {
+        const apiKey = "f2c01cb4362b40e7a50adf02b67e5011"; // Replace with your Spoonacular API key
+        const query = inputValue.value.trim();
+        if (!query) {
+          alert("Please enter a recipe name!");
+          return;
+        }
+        const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?query=${query}&number=10&apiKey=${apiKey}`;
+
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Something went wrong with the request.");
+            }
+            return response.json();
+          })
+          .then(displayRecipes)
+          .catch((err) => alert(err.message));
+      });
+
+      const displayRecipes = (data) => {
+        console.log(data); // Debugging: Check API response structure
+        recipeGrid.innerHTML = ""; // Clear the grid before displaying new results
+
+        if (!data.results || data.results.length === 0) {
+          recipeGrid.innerHTML = `<p class='text-center text-white'>No recipes found for "${inputValue.value}". Try again!</p>`;
+          return;
+        }
+
+        data.results.forEach((recipe) => {
+          const recipeCard = document.createElement("div");
+          recipeCard.classList.add(
+            "bg-gray-800",
+            "rounded-lg",
+            "overflow-hidden",
+            "shadow-md",
+            "hover:shadow-xl",
+            "hover:scale-105",
+            "transform",
+            "transition",
+            "duration-300"
+          );
+
+          recipeCard.innerHTML = `
+            <img src="${recipe.image}" alt="${
+            recipe.title
+          }" class="w-full h-72 object-cover" />
+            <div class="p-3">
+              <h3 class="text-lg font-semibold mb-2">${recipe.title}</h3>
+              <a
+                href="https://spoonacular.com/recipes/${recipe.title.replace(
+                  / /g,
+                  "-"
+                )}-${recipe.id}"
+                target="_blank"
+                class="text-blue-500 underline"
+              >
+                View Full Recipe
+              </a>
+            </div>
+          `;
+
+          recipeGrid.appendChild(recipeCard);
+        });
+      };
+    </script>
+  </body>
+</html>

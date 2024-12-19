@@ -1,0 +1,315 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body class="bg-white">
+    <!-- <h1 class="text-3xl text-black font-bold underline">Hello world!</h1>
+    <div
+      class="w-full p-5 grid grid-cols-3 content-between bg-indigo-300 border-2 border-solid border-purple-900"
+    >
+      <div class="bg-pink-400 w-32 h-32 m-2 border-2 border-solid border-black">
+        1
+      </div>
+      <div class="bg-pink-400 w-32 h-32 m-2 border-2 border-solid border-black">
+        2
+      </div>
+      <div class="bg-pink-400 w-32 h-32 m-2 border-2 border-solid border-black">
+        3
+      </div>
+      <div class="bg-pink-400 w-32 h-32 m-2 border-2 border-solid border-black">
+        4
+      </div>
+      <div class="bg-pink-400 w-32 h-32 m-2 border-2 border-solid border-black">
+        5
+      </div>
+      <div class="bg-pink-400 w-32 h-32 m-2 border-2 border-solid border-black">
+        6
+      </div>
+    </div> -->
+    <div class="flex flex-col gap-4 p-4 bg-gray-100">
+      <!-- Padding 0 -->
+      <div class="p-0 bg-blue-500 text-white">Padding 0 (no padding)</div>
+
+      <!-- Padding 4 -->
+      <div class="p-4 bg-green-500 text-white">
+        Padding 4 (1rem padding on all sides)
+      </div>
+
+      <!-- Padding X and Y -->
+      <div class="px-8 py-2 bg-red-500 text-white">
+        Padding X-8 Y-2 (2rem horizontal, 0.5rem vertical padding)
+      </div>
+
+      <!-- Padding Left and Right -->
+      <div class="pl-10 pr-4 bg-purple-500 text-white">
+        Padding Left-10 Right-4 (2.5rem left, 1rem right padding)
+      </div>
+
+      <!-- Padding Top and Bottom -->
+      <div class="pt-6 pb-3 bg-yellow-500 text-white">
+        Padding Top-6 Bottom-3 (1.5rem top, 0.75rem bottom padding)
+      </div>
+    </div>
+    <div class="space-y-6 p-4 bg-gray-100">
+      <!-- Background Color -->
+      <div class="bg-blue-500 text-white p-4">
+        Background Color (bg-blue-500)
+      </div>
+
+      <!-- Background Gradient -->
+      <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white p-4">
+        Background Gradient (bg-gradient-to-r from-green-400 to-blue-500)
+      </div>
+
+      <!-- Background Image -->
+      <div
+        class="bg-cover bg-center bg-no-repeat bg-[url('https://via.placeholder.com/200')] h-32 text-white flex items-center justify-center"
+      >
+        Background Image (bg-cover, bg-center)
+      </div>
+
+      <!-- Background Opacity -->
+      <div class="bg-purple-500 bg-opacity-70 text-white p-4">
+        Background Color with Opacity (bg-purple-500 bg-opacity-70)
+      </div>
+
+      <!-- Background Clip (using text) -->
+      <div
+        class="bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent text-2xl font-bold p-4"
+      >
+        Background Clip Text (bg-clip-text text-transparent)
+      </div>
+    </div>
+    <div
+      class="max-w-sm mx-auto p-5 border-2 border-gray-300 rounded-lg shadow-lg hover:border-blue-500 transition duration-300 ease-in-out"
+    >
+      <h2 class="text-xl font-bold mb-2">Tailwind CSS Card</h2>
+      <p class="text-gray-700 mb-4">
+        This is an example of a card component using Tailwind CSS borders.
+      </p>
+      <button
+        class="px-4 py-2 border border-blue-500 text-blue-500 rounded hover:bg-blue-500 hover:text-white transition duration-300 ease-in-out"
+      >
+        Click Me
+      </button>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="min-w-full border-collapse border border-gray-300">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="p-4 border border-gray-300 text-left">Name</th>
+            <th class="p-4 border border-gray-300 text-left">Age</th>
+            <th class="p-4 border border-gray-300 text-left">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-gray-100">
+            <td class="p-4 border border-gray-300">Alice</td>
+            <td class="p-4 border border-gray-300">28</td>
+            <td class="p-4 border border-gray-300">alice@example.com</td>
+          </tr>
+          <tr class="hover:bg-gray-100">
+            <td class="p-4 border border-gray-300">Bob</td>
+            <td class="p-4 border border-gray-300">34</td>
+            <td class="p-4 border border-gray-300">bob@example.com</td>
+          </tr>
+          <tr class="hover:bg-gray-100">
+            <td class="p-4 border border-gray-300">Charlie</td>
+            <td class="p-4 border border-gray-300">22</td>
+            <td class="p-4 border border-gray-300">charlie@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="flex flex-wrap justify-between items-center p-4 bg-gray-100">
+      <div class="flex-1 max-w-xs p-4 bg-white shadow-md m-2 rounded">
+        <h2 class="text-lg font-bold">Card 1</h2>
+        <p class="text-gray-700">This is the first card content.</p>
+      </div>
+      <div class="flex-1 max-w-xs p-4 bg-white shadow-md m-2 rounded">
+        <h2 class="text-lg font-bold">Card 2</h2>
+        <p class="text-gray-700">This is the second card content.</p>
+      </div>
+      <div class="flex-1 max-w-xs p-4 bg-white shadow-md m-2 rounded">
+        <h2 class="text-lg font-bold">Card 3</h2>
+        <p class="text-gray-700">This is the third card content.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-gray-100">
+      <div class="p-4 bg-white shadow-md rounded">Item 1</div>
+      <div class="p-4 bg-white shadow-md rounded">Item 2</div>
+      <div class="p-4 bg-white shadow-md rounded col-span-1 md:col-span-2">
+        Item 3 (Spans 2 columns on medium screens)
+      </div>
+      <div class="p-4 bg-white shadow-md rounded">Item 4</div>
+      <div class="p-4 bg-white shadow-md rounded">Item 5</div>
+    </div>
+    <div
+      class="p-6 max-w-sm mx-auto bg-white shadow-lg rounded-lg transition duration-300 hover:shadow-2xl hover:scale-105 hover:opacity-90"
+    >
+      <h2 class="text-xl font-bold mb-2">Interactive Card</h2>
+      <p class="text-gray-700 mb-4">
+        Hover over this card to see effects like shadow, scaling, and opacity
+        changes.
+      </p>
+      <button
+        class="px-4 py-2 bg-blue-500 text-white rounded transition duration-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+      >
+        Learn More
+      </button>
+    </div>
+    <div
+      class="p-6 max-w-sm mx-auto bg-white rounded-lg shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl"
+    >
+      <h2 class="text-xl font-bold mb-2 animate-pulse">Interactive Card</h2>
+      <p class="text-gray-700 mb-4">
+        Hover to see transitions, and notice the animated pulse effect on the
+        title.
+      </p>
+      <button
+        class="px-4 py-2 bg-blue-500 text-white rounded transition-colors duration-200 ease-in-out hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 animate-bounce"
+      >
+        Learn More
+      </button>
+    </div>
+    <div
+      class="transform transition duration-300 ease-in-out hover:scale-110 hover:rotate-3 hover:translate-x-2 hover:skew-y-3 p-6 max-w-xs mx-auto bg-white rounded-lg shadow-lg"
+    >
+      <h2 class="text-xl font-bold mb-2">Transformed Card</h2>
+      <p class="text-gray-700">
+        Hover over this card to see scale, rotation, translation, and skew
+        effects applied together.
+      </p>
+    </div>
+    <div class="group p-6 max-w-sm mx-auto bg-white rounded-lg shadow-lg">
+      <h2 class="text-xl font-bold mb-2 group-hover:text-blue-500 transition">
+        Interactive Card
+      </h2>
+      <p class="text-gray-700 mb-4">
+        Hover, focus, and click the button below to see different state effects.
+      </p>
+      <button
+        class="px-4 py-2 bg-blue-500 text-white rounded transition-colors duration-200 ease-in-out hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 active:bg-blue-700 disabled:opacity-50"
+      >
+        Interactive Button
+      </button>
+    </div>
+    <div
+      class="group p-6 max-w-sm mx-auto bg-white rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl focus-within:ring-2 focus-within:ring-blue-500"
+    >
+      <h2 class="text-xl font-bold mb-2 group-hover:text-blue-500">
+        Interactive Card
+      </h2>
+      <p class="text-gray-700">
+        Hover, focus on the input, or click the button to see state effects.
+      </p>
+      <input
+        type="text"
+        placeholder="Enter text"
+        class="mt-4 w-full p-2 border rounded focus:outline-none focus:border-blue-500"
+      />
+      <button
+        class="mt-4 px-4 py-2 bg-blue-500 text-white rounded transition-colors duration-200 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 active:bg-blue-700 disabled:opacity-50"
+      >
+        Submit
+      </button>
+    </div>
+
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="font-sans antialiased text-gray-900">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-500 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <a href="#" class="text-2xl font-bold">Our School</a>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="hover:text-yellow-300 transition-colors duration-300">Home</a></li>
+                <li><a href="#about" class="hover:text-yellow-300 transition-colors duration-300">About</a></li>
+                <li><a href="#activities" class="hover:text-yellow-300 transition-colors duration-300">Activities</a></li>
+                <li><a href="#contact" class="hover:text-yellow-300 transition-colors duration-300">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="bg-yellow-300 text-center py-20">
+        <div class="container mx-auto">
+            <h1 class="text-4xl font-bold mb-4">Welcome to Our School</h1>
+            <p class="text-lg mb-6">Empowering students with quality education and a wide range of extracurricular activities.</p>
+            <a href="#about" class="bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 transition duration-300">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-blue-600 mb-8">About Us</h2>
+            <p class="text-gray-700 max-w-2xl mx-auto mb-10">Our school is committed to providing a balanced education that fosters intellectual, physical, and emotional growth. We value diversity and encourage students to reach their highest potential.</p>
+            <img src="https://via.placeholder.com/800x400" alt="School Image" class="w-full rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="bg-blue-100 py-20">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-blue-600 mb-8">Our Activities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-lg transition hover:shadow-xl hover:scale-105 transform duration-300">
+                    <h3 class="text-xl font-bold text-blue-500 mb-3">Sports</h3>
+                    <p class="text-gray-700">We offer a wide variety of sports activities including football, basketball, and track & field to help students stay fit and healthy.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg transition hover:shadow-xl hover:scale-105 transform duration-300">
+                    <h3 class="text-xl font-bold text-blue-500 mb-3">Arts & Crafts</h3>
+                    <p class="text-gray-700">Our arts and crafts classes inspire creativity and self-expression in students through drawing, painting, and sculpture.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg transition hover:shadow-xl hover:scale-105 transform duration-300">
+                    <h3 class="text-xl font-bold text-blue-500 mb-3">Science Club</h3>
+                    <p class="text-gray-700">The Science Club encourages curiosity, critical thinking, and problem-solving skills with hands-on experiments and projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="bg-yellow-200 py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-blue-600 mb-8">Contact Us</h2>
+            <form class="max-w-xl mx-auto">
+                <div class="mb-4">
+                    <label class="block text-left text-gray-700 font-bold mb-2" for="name">Name</label>
+                    <input type="text" id="name" class="w-full p-3 rounded border focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Your Name">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-left text-gray-700 font-bold mb-2" for="email">Email</label>
+                    <input type="email" id="email" class="w-full p-3 rounded border focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Your Email">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-left text-gray-700 font-bold mb-2" for="message">Message</label>
+                    <textarea id="message" class="w-full p-3 rounded border focus:outline-none focus:ring-2 focus:ring-blue-400" rows="4" placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-blue-600 transition duration-300">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-500 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Our School. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
